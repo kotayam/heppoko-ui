@@ -1,0 +1,16 @@
+/* chrome, edge, and safari */
+.scroll-area::-webkit-scrollbar {
+  width: 0.5rem;
+  display: block;
+}
+
+.scroll-area::-webkit-scrollbar-track {
+  background-color: var(--white);
+  border-radius: 0.25rem;
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background-color: var(--gray);
+  border-radius: 0.25rem;
+  border: 0.1rem solid var(--white);
+}
