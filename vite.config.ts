@@ -1,9 +1,10 @@
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react-swc";
 import path from "node:path";
+import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tsconfigPaths()],
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
@@ -28,7 +29,7 @@ export default defineConfig({
       include: ["src/"],
       reportsDirectory: "coverage/report",
     },
-    setupFiles: ["./vitest-setup.ts"],
+    setupFiles: ["./vitest.setup.ts"],
   },
   css: {
     modules: {
