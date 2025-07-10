@@ -7,7 +7,7 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "type-check": "tsc",
-    "test": "vitest",
+    "test": "vitest run --coverage",
     "fmt": "prettier --write ."
   },
   "dependencies": {
