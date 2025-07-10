@@ -1,3 +1,5 @@
+import React from "react";
+
 import { BorderProps, combineStyle, DimensionProps, ShadowProps } from "../../common";
 
 type ImageProps = {

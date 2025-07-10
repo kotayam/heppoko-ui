@@ -1,13 +1,14 @@
 import React, { CSSProperties } from "react";
+
 import {
-  CustomStyleProps,
   BorderProps,
+  ColorProps,
+  combineStyle,
+  CustomStyleProps,
   DimensionProps,
   MarginProps,
   PaddingProps,
-  ColorProps,
   ShadowProps,
-  combineStyle,
   VisibilityProps,
 } from "../../common";
 import { Icon } from "../Icon/Icon";
@@ -45,7 +46,17 @@ export const IconButton: React.FC<IconButtonProps> = ({
   };
   const combinedStyle = {
     ...baseStyle,
-    ...combineStyle({ borderStyle, borderRadius, borderWidth, borderColor, bg, width, height, shadow, ...rest }),
+    ...combineStyle({
+      borderStyle,
+      borderRadius,
+      borderWidth,
+      borderColor,
+      bg,
+      width,
+      height,
+      shadow,
+      ...rest,
+    }),
   };
 
   return (

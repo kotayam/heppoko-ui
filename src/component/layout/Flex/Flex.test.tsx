@@ -1,6 +1,5 @@
 import { cleanup, render, screen } from "@testing-library/react";
-import { describe } from "node:test";
-import { afterEach, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 import { Flex } from "./Flex";
 
 describe("Flex", () => {
