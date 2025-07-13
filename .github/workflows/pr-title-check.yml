@@ -1,0 +1,22 @@
+name: PR Title Format Check
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  pr_title_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check PR title format
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const prTitle = context.payload.pull_request.title;
+            const pattern = /^(feat|ci|test|chore): .+ \[HEP-\d+\]$/i;
+            if (!pattern.test(prTitle)) {
+              core.setFailed(
+                `PR title "${prTitle}" does not match the required format: \n` + 
+                `"type: description [LINEAR-issue-number]" e.g. "feat: add button [HEP-1234]"`
+              )
+            }
