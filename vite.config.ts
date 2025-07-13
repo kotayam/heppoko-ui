@@ -1,7 +1,7 @@
 import react from "@vitejs/plugin-react-swc";
 import path from "node:path";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { defineConfig } from "vitest/config";
+import { configDefaults, defineConfig } from "vitest/config";
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
@@ -23,6 +23,7 @@ export default defineConfig({
     },
   },
   test: {
+    exclude: [...configDefaults.exclude, ".github"],
     environment: "jsdom",
     coverage: {
       reporter: ["text", "json"],

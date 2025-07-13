@@ -9,6 +9,7 @@
     "serve": "vite preview",
     "type-check": "tsc",
     "test": "vitest run --coverage",
+    "test:scripts": "vitest run --config .github/scripts/vitest.config.ts",
     "fmt": "prettier --write ."
   },
   "dependencies": {

@@ -1,10 +1,6 @@
 import * as core from "@actions/core";
 import * as fs from "fs";
-
-export const validatePRTitle = (title: string) => {
-  const pattern = /^(feat|ci|test|chore): .+ \[HEP-\d+\]$/i;
-  return pattern.test(title);
-};
+import { validatePRTitle } from "../tools.ts";
 
 const main = async () => {
   const eventPath = process.env.GITHUB_EVENT_PATH!;
