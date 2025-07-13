@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:scripts": "tsc -p .github/scripts",
     "serve": "vite preview",
     "type-check": "tsc",
     "test": "vitest run --coverage",
