@@ -254,7 +254,9 @@ export const combineStyle = (props: StyleInputProps): CSSProperties => {
   return combined;
 };
 
-const mergeStyles = (...styles: Array<CSSProperties | undefined>): CSSProperties => {
+const mergeStyles = (
+  ...styles: Array<CSSProperties | undefined>
+): CSSProperties => {
   return Object.assign(
     {},
     ...styles.map((style) =>

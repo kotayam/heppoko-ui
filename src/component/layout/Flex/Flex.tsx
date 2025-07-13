@@ -65,7 +65,12 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(
     };
 
     return (
-      <div ref={ref} style={combinedStyle} className={className} onClick={onClick}>
+      <div
+        ref={ref}
+        style={combinedStyle}
+        className={className}
+        onClick={onClick}
+      >
         {children}
       </div>
     );

@@ -8,7 +8,15 @@ type TextProps = {
 } & WrapperProps &
   ColorProps;
 
-export const Text: React.FC<TextProps> = ({ className, onClick, children, size, weight, align, ...rest }) => {
+export const Text: React.FC<TextProps> = ({
+  className,
+  onClick,
+  children,
+  size,
+  weight,
+  align,
+  ...rest
+}) => {
   const baseStyle: CSSProperties = {
     fontSize: size,
     fontWeight: weight,
