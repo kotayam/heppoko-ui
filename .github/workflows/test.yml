@@ -2,9 +2,13 @@ name: Test Component Library
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - dev
   pull_requests:
-    branches: [main, dev]
+    branches:
+      - main
+      - dev
 
 jobs:
   test:
