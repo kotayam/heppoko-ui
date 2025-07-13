@@ -1,0 +1,23 @@
+name: PR Title Format Check
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  pr_title_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24.x"
+      - name: Install depenencies
+        run: yarn --frozen-lockfile
+      - name: Compile Typescript
+        run: yarn build:scripts
+      - name: Run PR title check
+        run: node dist/pr-title-check.cjs
+        env:
+          GITHUB_EVENT_PATH: ${{github.event_path}}
+          GITHUB_CONTEXT: ${{toJson(github)}}

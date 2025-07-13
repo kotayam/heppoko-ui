@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:scripts": "tsup --config .github/scripts/tsup.config.ts",
     "serve": "vite preview",
     "type-check": "tsc",
     "test": "vitest run --coverage",
+    "test:scripts": "vitest run --config .github/scripts/vitest.config.ts",
     "fmt": "prettier --write ."
   },
   "dependencies": {
@@ -15,6 +17,7 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@actions/core": "^1.11.1",
     "@eslint/js": "^9.30.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -36,6 +39,7 @@
     "globals": "^15.15.0",
     "jsdom": "^26.1.0",
     "prettier": "^3.5.3",
+    "tsup": "^8.5.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.36.0",
     "vite": "^7.0.0",
