@@ -18,7 +18,12 @@ type ContainerProps = PositionProps &
   MarginProps &
   ColorProps;
 
-export const Container: React.FC<ContainerProps> = ({ className, onClick, children, ...rest }) => {
+export const Container: React.FC<ContainerProps> = ({
+  className,
+  onClick,
+  children,
+  ...rest
+}) => {
   const combinedStyle = combineStyle(rest);
   return (
     <div style={combinedStyle} className={className} onClick={onClick}>

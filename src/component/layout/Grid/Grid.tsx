@@ -27,7 +27,18 @@ type GridProps = {
 
 export const Grid = forwardRef<HTMLDivElement, GridProps>(
   (
-    { className, onClick, children, templateColumns, justify = "center", align = "center", gap, gapX, gapY, ...rest },
+    {
+      className,
+      onClick,
+      children,
+      templateColumns,
+      justify = "center",
+      align = "center",
+      gap,
+      gapX,
+      gapY,
+      ...rest
+    },
     ref,
   ) => {
     // give gap priority.
@@ -51,7 +62,12 @@ export const Grid = forwardRef<HTMLDivElement, GridProps>(
     };
 
     return (
-      <div ref={ref} style={combinedStyle} className={className} onClick={onClick}>
+      <div
+        ref={ref}
+        style={combinedStyle}
+        className={className}
+        onClick={onClick}
+      >
         {children}
       </div>
     );

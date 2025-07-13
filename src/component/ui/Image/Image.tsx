@@ -1,6 +1,11 @@
 import React from "react";
 
-import { BorderProps, combineStyle, DimensionProps, ShadowProps } from "../../common";
+import {
+  BorderProps,
+  combineStyle,
+  DimensionProps,
+  ShadowProps,
+} from "../../common";
 
 type ImageProps = {
   src: string;

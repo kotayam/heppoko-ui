@@ -1,5 +1,11 @@
 import { CSSProperties, forwardRef } from "react";
-import { combineStyle, DimensionProps, MarginProps, PaddingProps, WrapperProps } from "../../common";
+import {
+  combineStyle,
+  DimensionProps,
+  MarginProps,
+  PaddingProps,
+  WrapperProps,
+} from "../../common";
 import styles from "./ScrollArea.module.css";
 
 type ScrollBarDirection = "horizontal" | "vertical" | "both";
@@ -13,7 +19,17 @@ type ScrollAreaProps = {
   MarginProps;
 
 export const ScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
-  ({ children, className, onClick, scrollbar = "both", scrollbarGutter = "stable", ...rest }, ref) => {
+  (
+    {
+      children,
+      className,
+      onClick,
+      scrollbar = "both",
+      scrollbarGutter = "stable",
+      ...rest
+    },
+    ref,
+  ) => {
     const getOverflowStyle = (): CSSProperties => {
       switch (scrollbar) {
         case "vertical":
@@ -34,7 +50,12 @@ export const ScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
     };
 
     return (
-      <div ref={ref} style={combinedStyle} className={`${styles.scrollArea} ${className}`} onClick={onClick}>
+      <div
+        ref={ref}
+        style={combinedStyle}
+        className={`${styles.scrollArea} ${className}`}
+        onClick={onClick}
+      >
         {children}
       </div>
     );

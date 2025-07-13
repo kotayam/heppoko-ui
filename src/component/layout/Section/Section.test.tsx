@@ -1,7 +1,16 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, expect, it } from "vitest";
 import { describe } from "vitest";
-import { centerX, centerY, commonBottom, commonLeft, commonRight, commonTop, middle, Section } from "./Section";
+import {
+  centerX,
+  centerY,
+  commonBottom,
+  commonLeft,
+  commonRight,
+  commonTop,
+  middle,
+  Section,
+} from "./Section";
 
 describe("Section", () => {
   afterEach(() => {

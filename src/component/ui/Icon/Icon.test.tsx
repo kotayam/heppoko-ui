@@ -8,7 +8,11 @@ import { Icon } from "./Icon";
 
 const Test = (props: React.HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div style={props.style} className={props.className} onClick={props.onClick}>
+    <div
+      style={props.style}
+      className={props.className}
+      onClick={props.onClick}
+    >
       test
     </div>
   );
