@@ -11,7 +11,7 @@ on:
       - dev
 
 jobs:
-  test-component-library:
+  test_component_library:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
 
       - name: Run tests
         run: yarn test
-  test-ci-scripts:
+  test_ci_scripts:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
