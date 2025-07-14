@@ -17,7 +17,7 @@ jobs:
       - name: Compile Typescript
         run: yarn build:scripts
       - name: Run PR title check
-        run: node .github/scripts/dist/pr-title-check/pr-title-check.js
+        run: node dist/pr-title-check.cjs
         env:
           GITHUB_EVENT_PATH: ${{github.event_path}}
           GITHUB_CONTEXT: ${{toJson(github)}}
