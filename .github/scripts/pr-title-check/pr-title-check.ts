@@ -1,6 +1,6 @@
 import * as core from "@actions/core";
 import * as fs from "fs";
-import { validatePRTitle } from "../tools";
+import { validatePRTitle } from "../tools/tools";
 
 const main = async () => {
     const eventPath = process.env.GITHUB_EVENT_PATH!;

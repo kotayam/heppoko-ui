@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { validatePRTitle } from "../tools";
+import { validatePRTitle } from "../tools/tools";
 
 describe("pr title check", () => {
     it("correct format", () => {
