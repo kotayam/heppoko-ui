@@ -1,9 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "allowImportingTsExtensions": false,
-    "noEmit": false
-  },
-  "include": ["./pr-title-check/pr-title-check.ts"]
-}
