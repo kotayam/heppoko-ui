@@ -11,7 +11,7 @@ on:
       - dev
 
 jobs:
-  test-component-library:
+  prettier-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
