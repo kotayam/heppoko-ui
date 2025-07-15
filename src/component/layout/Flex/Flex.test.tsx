@@ -1,6 +1,11 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { Flex } from "./Flex";
+import {
+  alignVariants,
+  flexDirectionVariants,
+  justifyVariants,
+} from "@/style/flex.css";
 
 describe("Flex", () => {
   afterEach(() => {
@@ -11,9 +16,9 @@ describe("Flex", () => {
     render(<Flex>test</Flex>);
     const div = screen.getByText("test");
     expect(div).toHaveStyle({ display: "flex" });
-    expect(div).toHaveStyle({ flexDirection: "row" });
-    expect(div).toHaveStyle({ justifyContent: "center" });
-    expect(div).toHaveStyle({ alignItems: "center" });
+    expect(div).toHaveClass(flexDirectionVariants["row"]);
+    expect(div).toHaveClass(justifyVariants["center"]);
+    expect(div).toHaveClass(alignVariants["center"]);
   });
 
   it("gap overwrites gapX and gapY", () => {

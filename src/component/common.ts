@@ -1,3 +1,4 @@
+import { Height, Width } from "@/style/dimension.css";
 import React, { CSSProperties } from "react";
 
 // accept inline styling and className to overriding and flexibility. Also make it clickable.
@@ -14,12 +15,12 @@ export type WrapperProps = CustomStyleProps & {
 
 // styling for dimensions.
 export type DimensionProps = {
-  width?: CSSProperties["width"];
-  height?: CSSProperties["height"];
-  minWidth?: CSSProperties["minWidth"];
-  minHeight?: CSSProperties["minHeight"];
-  maxWidth?: CSSProperties["maxWidth"];
-  maxHeight?: CSSProperties["maxHeight"];
+  width?: Width;
+  height?: Height;
+  minWidth?: Width;
+  minHeight?: Height;
+  maxWidth?: Width;
+  maxHeight?: Height;
 };
 
 // extract dimension props.

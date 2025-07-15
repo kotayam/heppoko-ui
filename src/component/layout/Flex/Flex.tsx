@@ -11,11 +11,19 @@ import {
   OpacityProps,
   PositionProps,
 } from "../../common";
+import {
+  AlignItems,
+  alignVariants,
+  FlexDirection,
+  flexDirectionVariants,
+  JustifyContent,
+  justifyVariants,
+} from "@/style/flex.css";
 
 type FlexProps = {
-  direction?: CSSProperties["flexDirection"];
-  justify?: CSSProperties["justifyContent"];
-  align?: CSSProperties["alignItems"];
+  direction?: FlexDirection;
+  justify?: JustifyContent;
+  align?: AlignItems;
   wrap?: CSSProperties["flexWrap"];
   gap?: CSSProperties["gap"];
   gapX?: CSSProperties["columnGap"];
@@ -36,9 +44,9 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(
       className,
       onClick,
       children,
-      direction = "row",
-      justify = "center",
-      align = "center",
+      direction = flexDirectionVariants["row"],
+      justify = justifyVariants["center"],
+      align = alignVariants["center"],
       gap,
       gapX,
       gapY,
@@ -53,8 +61,6 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(
     };
     const baseStyle: CSSProperties = {
       display: "flex",
-      flexDirection: direction,
-      justifyContent: justify,
       alignItems: align,
       flexWrap: wrap,
       ...getGap(),
@@ -63,12 +69,13 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(
       ...baseStyle,
       ...combineStyle(rest),
     };
+    const combinedClass = [direction, justify, align, className].join(" ");
 
     return (
       <div
         ref={ref}
         style={combinedStyle}
-        className={className}
+        className={combinedClass}
         onClick={onClick}
       >
         {children}
