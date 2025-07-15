@@ -2,9 +2,10 @@ import react from "@vitejs/plugin-react-swc";
 import path from "node:path";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { configDefaults, defineConfig } from "vitest/config";
+import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
 export default defineConfig({
-  plugins: [react(), tsconfigPaths()],
+  plugins: [react(), tsconfigPaths(), vanillaExtractPlugin()],
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/index.ts"),
