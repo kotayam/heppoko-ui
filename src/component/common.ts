@@ -1,4 +1,4 @@
-import { Height, Width } from "@/style/dimension.css";
+import { Height, Width } from "@/style/shared/dimension.css";
 import React, { CSSProperties } from "react";
 
 // accept inline styling and className to overriding and flexibility. Also make it clickable.

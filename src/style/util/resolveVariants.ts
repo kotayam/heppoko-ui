@@ -4,7 +4,18 @@ type VariantConfig = {
   cssProp: string;
 };
 
-export const resolveVariants = (configs: VariantConfig[]) => {
+export const createConfig = (
+  variants: Record<string, string>,
+  value: string | undefined,
+  cssProp: string,
+): VariantConfig => {
+  return { variants, value, cssProp };
+};
+
+export const resolveVariants = (
+  configs: VariantConfig[],
+  className?: string,
+) => {
   const classNames: string[] = [];
   const style: Record<string, string> = {};
 
@@ -17,6 +28,7 @@ export const resolveVariants = (configs: VariantConfig[]) => {
       style[cssProp] = value;
     }
   }
+  if (className) classNames.push(className);
 
   return {
     className: classNames.join(" "),

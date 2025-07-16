@@ -29,9 +29,31 @@ export const alignVariants = styleVariants({
 
 export type AlignItems = keyof typeof alignVariants | string;
 
+export const flexWrapVariants = styleVariants({
+  none: { flexWrap: "nowrap" },
+  wrap: { flexWrap: "wrap" },
+  reverse: { flexWrap: "wrap-reverse" },
+});
+
+export type Wrap = keyof typeof flexWrapVariants | string;
+
 export const gapVariants = styleVariants({
   none: { gap: "0" },
   md: { gap: "1rem" },
 });
 
 export type Gap = keyof typeof gapVariants | string;
+
+export const columnGapVariants = styleVariants({
+  none: { columnGap: "0" },
+  md: { columnGap: "1rem" },
+});
+
+export type ColumnGap = keyof typeof columnGapVariants | string;
+
+export const rowGapVariants = styleVariants({
+  none: { rowGap: "0" },
+  md: { rowGap: "1rem" },
+});
+
+export type RowGap = keyof typeof rowGapVariants | string;
