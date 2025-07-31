@@ -1,4 +1,4 @@
-import { CSSProperties, forwardRef } from "react";
+import { forwardRef } from "react";
 import {
   WrapperProps,
   BorderProps,
@@ -14,20 +14,30 @@ import {
 import {
   AlignItems,
   alignVariants,
+  ColumnGap,
+  columnGapVariants,
+  displayVariants,
   FlexDirection,
   flexDirectionVariants,
+  flexWrapVariants,
+  Gap,
+  gapVariants,
   JustifyContent,
   justifyVariants,
-} from "@/style/flex.css";
+  RowGap,
+  rowGapVariants,
+  Wrap,
+} from "@/style/component/flex.css";
+import { createConfig, resolveVariants } from "@/style/util/resolveVariants";
 
 type FlexProps = {
   direction?: FlexDirection;
   justify?: JustifyContent;
   align?: AlignItems;
-  wrap?: CSSProperties["flexWrap"];
-  gap?: CSSProperties["gap"];
-  gapX?: CSSProperties["columnGap"];
-  gapY?: CSSProperties["rowGap"];
+  wrap?: Wrap;
+  gap?: Gap;
+  gapX?: ColumnGap;
+  gapY?: RowGap;
 } & WrapperProps &
   DimensionProps &
   PositionProps &
@@ -38,44 +48,68 @@ type FlexProps = {
   ShadowProps &
   OpacityProps;
 
+const resolveFlexProps = (
+  className: string | undefined,
+  direction: FlexDirection,
+  justify: JustifyContent,
+  align: AlignItems,
+  wrap: Wrap | undefined,
+  gap: Gap | undefined,
+  gapX: ColumnGap,
+  gapY: RowGap,
+) => {
+  const gapConfig = [];
+  if (gap) {
+    gapConfig.push(createConfig(gapVariants, gap, "gap"));
+  } else {
+    gapConfig.push(createConfig(columnGapVariants, gapX, "columnGap"));
+    gapConfig.push(createConfig(rowGapVariants, gapY, "rowGap"));
+  }
+  return resolveVariants(
+    [
+      createConfig(displayVariants, "flex", "display"),
+      createConfig(flexDirectionVariants, direction, "flexDirection"),
+      createConfig(alignVariants, align, "alignItems"),
+      createConfig(justifyVariants, justify, "justifyContent"),
+      createConfig(flexWrapVariants, wrap, "flexWrap"),
+      ...gapConfig,
+    ],
+    className,
+  );
+};
+
 export const Flex = forwardRef<HTMLDivElement, FlexProps>(
   (
     {
       className,
       onClick,
       children,
-      direction = flexDirectionVariants["row"],
-      justify = justifyVariants["center"],
-      align = alignVariants["center"],
+      direction = "row",
+      justify = "center",
+      align = "center",
       gap,
-      gapX,
-      gapY,
+      gapX = "md",
+      gapY = "md",
       wrap,
       ...rest
     },
     ref,
   ) => {
-    const getGap = (): CSSProperties => {
-      if (gap) return { gap: gap };
-      return { columnGap: gapX, rowGap: gapY };
-    };
-    const baseStyle: CSSProperties = {
-      display: "flex",
-      alignItems: align,
-      flexWrap: wrap,
-      ...getGap(),
-    };
-    const combinedStyle = {
-      ...baseStyle,
-      ...combineStyle(rest),
-    };
-    const combinedClass = [direction, justify, align, className].join(" ");
-
+    const res = resolveFlexProps(
+      className,
+      direction,
+      justify,
+      align,
+      wrap,
+      gap,
+      gapX,
+      gapY,
+    );
     return (
       <div
         ref={ref}
-        style={combinedStyle}
-        className={combinedClass}
+        className={res.className}
+        style={{ ...res.style, ...combineStyle(rest) }}
         onClick={onClick}
       >
         {children}
