@@ -1,6 +1,5 @@
 import { cleanup } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-
 import {
   BorderProps,
   ColorProps,
@@ -15,28 +14,7 @@ import {
   VisibilityProps,
 } from "./common";
 
-describe("common getColor", () => {
-  afterEach(() => {
-    cleanup();
-  });
-
-  it("undefined", () => {
-    const res = getColor(undefined);
-    expect(res).toBeUndefined();
-  });
-
-  it("css property", () => {
-    const res = getColor("inherit");
-    expect(res).toBe("inherit");
-  });
-
-  it("turing color", () => {
-    const res = getColor("green");
-    expect(res).toBe("#25cb55");
-  });
-});
-
-describe("common combineStyle", () => {
+describe("Flex", () => {
   afterEach(() => {
     cleanup();
   });

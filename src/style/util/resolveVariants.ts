@@ -29,6 +29,8 @@ export const resolveVariants = (
     }
   }
   if (className) classNames.push(className);
+  console.log("className", classNames);
+  console.log("style", style);
 
   return {
     className: classNames.join(" "),

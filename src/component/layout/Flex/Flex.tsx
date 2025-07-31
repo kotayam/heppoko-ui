@@ -54,10 +54,17 @@ const resolveFlexProps = (
   justify: JustifyContent,
   align: AlignItems,
   wrap: Wrap | undefined,
-  gap: Gap,
-  gapX: ColumnGap | undefined,
-  gapY: RowGap | undefined,
+  gap: Gap | undefined,
+  gapX: ColumnGap,
+  gapY: RowGap,
 ) => {
+  const gapConfig = [];
+  if (gap) {
+    gapConfig.push(createConfig(gapVariants, gap, "gap"));
+  } else {
+    gapConfig.push(createConfig(columnGapVariants, gapX, "columnGap"));
+    gapConfig.push(createConfig(rowGapVariants, gapY, "rowGap"));
+  }
   return resolveVariants(
     [
       createConfig(displayVariants, "flex", "display"),
@@ -65,9 +72,7 @@ const resolveFlexProps = (
       createConfig(alignVariants, align, "alignItems"),
       createConfig(justifyVariants, justify, "justifyContent"),
       createConfig(flexWrapVariants, wrap, "flexWrap"),
-      createConfig(gapVariants, gap, "gap"),
-      createConfig(columnGapVariants, gapX, "columnGap"),
-      createConfig(rowGapVariants, gapY, "rowGap"),
+      ...gapConfig,
     ],
     className,
   );
@@ -82,9 +87,9 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(
       direction = flexDirectionVariants["row"],
       justify = justifyVariants["center"],
       align = alignVariants["center"],
-      gap = gapVariants["md"],
-      gapX,
-      gapY,
+      gap,
+      gapX = columnGapVariants["md"],
+      gapY = rowGapVariants["md"],
       wrap,
       ...rest
     },

@@ -3,10 +3,12 @@ import { afterEach, describe, expect, it } from "vitest";
 import { Flex } from "./Flex";
 import {
   alignVariants,
+  columnGapVariants,
   displayVariants,
   flexDirectionVariants,
   gapVariants,
   justifyVariants,
+  rowGapVariants,
 } from "@/style/component/flex.css";
 
 describe("Flex", () => {
@@ -21,6 +23,8 @@ describe("Flex", () => {
     expect(div).toHaveClass(flexDirectionVariants["row"]);
     expect(div).toHaveClass(justifyVariants["center"]);
     expect(div).toHaveClass(alignVariants["center"]);
+    expect(div).toHaveClass(columnGapVariants["md"]);
+    expect(div).toHaveClass(rowGapVariants["md"]);
   });
 
   it("gap overwrites gapX and gapY", () => {
