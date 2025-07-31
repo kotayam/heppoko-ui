@@ -3,7 +3,7 @@ import { validatePRTitle } from "../tools/tools";
 
 describe("pr title check", () => {
   it("correct format", () => {
-    const allowedTypes = ["feat", "test", "ci", "chore"];
+    const allowedTypes = ["feat", "test", "ci", "chore", "enhance"];
     const title = ": add button [HEP-1234]";
     allowedTypes.forEach((type) => {
       expect(validatePRTitle(type + title)).toBeTruthy();
