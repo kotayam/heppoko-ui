@@ -1,9 +1,11 @@
+// VariantConfig represents the config for a variant.
 type VariantConfig = {
   variants: Record<string, string>;
   value?: string;
   cssProp: string;
 };
 
+// createConfig creates a new VariantConfig.
 export const createConfig = (
   variants: Record<string, string>,
   value: string | undefined,
@@ -12,6 +14,7 @@ export const createConfig = (
   return { variants, value, cssProp };
 };
 
+// resolveVariants returns a className and styles from VariantConfigs.
 export const resolveVariants = (
   configs: VariantConfig[],
   className?: string,
@@ -29,8 +32,6 @@ export const resolveVariants = (
     }
   }
   if (className) classNames.push(className);
-  console.log("className", classNames);
-  console.log("style", style);
 
   return {
     className: classNames.join(" "),
