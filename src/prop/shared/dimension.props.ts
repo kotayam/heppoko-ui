@@ -31,6 +31,5 @@ export const createDimensionConfigs = (
     createConfig(widthVariants, maxWidth, "maxWidth"),
     createConfig(heightVariants, maxHeight, "maxHeight"),
   ];
-
   return configs;
 };

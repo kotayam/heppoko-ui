@@ -3,12 +3,12 @@ import {
   BorderProps,
   ColorProps,
   combineStyle,
-  DimensionProps,
   MarginProps,
   PaddingProps,
   ShadowProps,
   WrapperProps,
 } from "../../common";
+import { DimensionProps } from "@/prop/shared/dimension.props";
 
 type GridProps = {
   templateColumns?: CSSProperties["gridTemplateColumns"];

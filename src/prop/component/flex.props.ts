@@ -1,7 +1,6 @@
 import {
   WrapperProps,
   BorderProps,
-  DimensionProps,
   PaddingProps,
   MarginProps,
   ShadowProps,
@@ -27,6 +26,7 @@ import {
   Wrap,
 } from "@/style/component/flex.css";
 import { createConfig, VariantConfig } from "@/style/util/resolveVariants";
+import { DimensionProps } from "../shared/dimension.props";
 
 export type FlexProps = {
   direction?: FlexDirection;
