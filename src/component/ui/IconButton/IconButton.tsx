@@ -9,9 +9,9 @@ import {
   MarginProps,
   PaddingProps,
   ShadowProps,
-  VisibilityProps,
 } from "../../common";
 import { Icon } from "../Icon/Icon";
+import { VisibilityProps } from "@/prop/shared/visibility.props";
 
 type IconButtonProps = {
   icon: React.ReactElement<typeof Icon>;

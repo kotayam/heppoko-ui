@@ -1,5 +1,5 @@
 // VariantConfig represents the config for a variant.
-type VariantConfig = {
+export type VariantConfig = {
   variants: Record<string, string>;
   value?: string;
   cssProp: string;
