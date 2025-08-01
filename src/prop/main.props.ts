@@ -49,7 +49,7 @@ export const resolveStyleInput = (
     ),
     ...createVisibilityConfigs(props.visibility),
   ];
-  return resolveVariants(combinedConfigs, props.className);
+  return resolveVariants(combinedConfigs, props.className, props.style);
 
   // const combined = mergeStyles(
   //     getDimensionStyle(props),
