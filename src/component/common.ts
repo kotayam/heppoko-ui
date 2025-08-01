@@ -1,5 +1,5 @@
+import { DimensionProps } from "@/prop/shared/dimension.props";
 import { VisibilityProps } from "@/prop/shared/visibility.props";
-import { Height, Width } from "@/style/shared/dimension.css";
 import { visibilityVariants } from "@/style/shared/visibility.css";
 import { createConfig, resolveVariants } from "@/style/util/resolveVariants";
 import React, { CSSProperties } from "react";
@@ -14,16 +14,6 @@ export type CustomStyleProps = {
 // accept children.
 export type WrapperProps = CustomStyleProps & {
   children: React.ReactNode;
-};
-
-// styling for dimensions.
-export type DimensionProps = {
-  width?: Width;
-  height?: Height;
-  minWidth?: Width;
-  minHeight?: Height;
-  maxWidth?: Width;
-  maxHeight?: Height;
 };
 
 // extract dimension props.
