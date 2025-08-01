@@ -1,6 +1,5 @@
 import { CSSProperties } from "react";
 import {
-  DimensionProps,
   BorderProps,
   PositionProps,
   PaddingProps,
@@ -14,6 +13,10 @@ import {
   createVisibilityConfigs,
   VisibilityProps,
 } from "./shared/visibility.props";
+import {
+  createDimensionConfigs,
+  DimensionProps,
+} from "./shared/dimension.props";
 
 // combine all shared style props.
 export type StyleInputProps = DimensionProps &
@@ -36,9 +39,17 @@ export const resolveStyleInput = (
   // TODO: Add config creation for other shared props
   const combinedConfigs = [
     ...componentConfigs,
+    ...createDimensionConfigs(
+      props.width,
+      props.height,
+      props.minWidth,
+      props.minHeight,
+      props.maxWidth,
+      props.maxHeight,
+    ),
     ...createVisibilityConfigs(props.visibility),
   ];
-  return resolveVariants(combinedConfigs, props.className);
+  return resolveVariants(combinedConfigs, props.className, props.style);
 
   // const combined = mergeStyles(
   //     getDimensionStyle(props),

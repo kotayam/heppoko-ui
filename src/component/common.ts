@@ -1,7 +1,5 @@
+import { DimensionProps } from "@/prop/shared/dimension.props";
 import { VisibilityProps } from "@/prop/shared/visibility.props";
-import { Height, Width } from "@/style/shared/dimension.css";
-import { visibilityVariants } from "@/style/shared/visibility.css";
-import { createConfig, resolveVariants } from "@/style/util/resolveVariants";
 import React, { CSSProperties } from "react";
 
 // accept inline styling and className to overriding and flexibility. Also make it clickable.
@@ -14,16 +12,6 @@ export type CustomStyleProps = {
 // accept children.
 export type WrapperProps = CustomStyleProps & {
   children: React.ReactNode;
-};
-
-// styling for dimensions.
-export type DimensionProps = {
-  width?: Width;
-  height?: Height;
-  minWidth?: Width;
-  minHeight?: Height;
-  maxWidth?: Width;
-  maxHeight?: Height;
 };
 
 // extract dimension props.
@@ -176,10 +164,7 @@ const getOpacityStyle = (props: StyleInputProps): CSSProperties => {
 // convert VisibilityProps to css properties.
 const getVisibilityStyle = (props: StyleInputProps): CSSProperties => {
   const { visibility } = props;
-  const res = resolveVariants([
-    createConfig(visibilityVariants, visibility, "visibility"),
-  ]);
-  return res.style;
+  return { visibility: visibility as CSSProperties["visibility"] };
 };
 
 // styling for colors.

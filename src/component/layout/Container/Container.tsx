@@ -3,12 +3,12 @@ import {
   BorderProps,
   ColorProps,
   combineStyle,
-  DimensionProps,
   MarginProps,
   PaddingProps,
   PositionProps,
   WrapperProps,
 } from "../../common";
+import { DimensionProps } from "@/prop/shared/dimension.props";
 
 type ContainerProps = PositionProps &
   WrapperProps &
