@@ -10,5 +10,5 @@ export const heightVariants = styleVariants({
   screen: { height: "vh" },
 });
 
-export type Width = keyof typeof widthVariants | string;
-export type Height = keyof typeof heightVariants | string;
+export type Width = keyof typeof widthVariants | (string & {});
+export type Height = keyof typeof heightVariants | (string & {});
