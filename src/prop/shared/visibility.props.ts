@@ -6,10 +6,6 @@ export type VisibilityProps = {
 };
 
 export const createVisibilityConfigs = (visibility: Visibility | undefined) => {
-  const configs = [
-    visibility
-      ? createConfig(visibilityVariants, visibility, "visibility")
-      : undefined,
-  ].filter((c) => c !== undefined);
+  const configs = [createConfig(visibilityVariants, visibility, "visibility")];
   return configs;
 };
