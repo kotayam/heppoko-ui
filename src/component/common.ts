@@ -1,4 +1,7 @@
+import { VisibilityProps } from "@/prop/shared/visibility.props";
 import { Height, Width } from "@/style/shared/dimension.css";
+import { visibilityVariants } from "@/style/shared/visibility.css";
+import { createConfig, resolveVariants } from "@/style/util/resolveVariants";
 import React, { CSSProperties } from "react";
 
 // accept inline styling and className to overriding and flexibility. Also make it clickable.
@@ -170,15 +173,13 @@ const getOpacityStyle = (props: StyleInputProps): CSSProperties => {
   };
 };
 
-// styling for visibility
-export type VisibilityProps = {
-  visibility?: CSSProperties["visibility"];
-};
-
 // convert VisibilityProps to css properties.
 const getVisibilityStyle = (props: StyleInputProps): CSSProperties => {
   const { visibility } = props;
-  return { visibility };
+  const res = resolveVariants([
+    createConfig(visibilityVariants, visibility, "visibility"),
+  ]);
+  return res.style;
 };
 
 // styling for colors.

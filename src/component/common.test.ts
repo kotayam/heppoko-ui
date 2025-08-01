@@ -11,8 +11,8 @@ import {
   PaddingProps,
   PositionProps,
   ShadowProps,
-  VisibilityProps,
 } from "./common";
+import { VisibilityProps } from "@/prop/shared/visibility.props";
 
 describe("Flex", () => {
   afterEach(() => {
