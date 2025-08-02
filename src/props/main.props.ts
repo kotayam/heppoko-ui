@@ -6,7 +6,6 @@ import {
   MarginProps,
   ShadowProps,
   ColorProps,
-  OpacityProps,
 } from "@/components/common";
 import { resolveVariants, VariantConfig } from "@/styles/utils/resolveVariants";
 import {
@@ -17,6 +16,7 @@ import {
   createDimensionConfigs,
   DimensionProps,
 } from "./shared/dimension.props";
+import { OpacityProps } from "@/props/shared/opacity.props";
 
 // combine all shared style props.
 export type StyleInputProps = DimensionProps &

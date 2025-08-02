@@ -1,5 +1,6 @@
 import { DimensionProps } from "@/props/shared/dimension.props";
 import { VisibilityProps } from "@/props/shared/visibility.props";
+import { OpacityProps } from "@/props/shared/opacity.props";
 import React, { CSSProperties } from "react";
 
 // accept inline styling and className to overriding and flexibility. Also make it clickable.
@@ -146,11 +147,6 @@ const getShadowStyle = (props: StyleInputProps): CSSProperties => {
   return {
     boxShadow: shadow ? shadowStyle : undefined,
   };
-};
-
-// styling for opacity.
-export type OpacityProps = {
-  opacity?: CSSProperties["opacity"];
 };
 
 // convert OpacityProps to css properties.
