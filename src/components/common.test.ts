@@ -1,7 +1,6 @@
 import { cleanup } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import {
-  BorderProps,
   ColorProps,
   combineStyle,
   getColor,
@@ -13,6 +12,7 @@ import {
 import { VisibilityProps } from "@/props/shared/visibility.props";
 import { DimensionProps } from "@/props/shared/dimension.props";
 import { OpacityProps } from "@/props/shared/opacity.props";
+import { BorderProps } from "@/props/shared/border.props";
 
 describe("Flex", () => {
   afterEach(() => {
