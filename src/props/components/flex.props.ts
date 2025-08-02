@@ -5,7 +5,6 @@ import {
   MarginProps,
   ShadowProps,
   ColorProps,
-  OpacityProps,
   PositionProps,
 } from "@/components/common";
 import {
@@ -27,6 +26,7 @@ import {
 } from "@/styles/components/flex.css";
 import { createConfig, VariantConfig } from "@/styles/utils/resolveVariants";
 import { DimensionProps } from "../shared/dimension.props";
+import { OpacityProps } from "../shared/opacity.props";
 
 export type FlexProps = {
   direction?: FlexDirection;
