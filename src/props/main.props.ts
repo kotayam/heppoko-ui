@@ -16,7 +16,10 @@ import {
   createDimensionConfigs,
   DimensionProps,
 } from "./shared/dimension.props";
-import { OpacityProps } from "@/props/shared/opacity.props";
+import {
+  createOpacityConfigs,
+  OpacityProps,
+} from "@/props/shared/opacity.props";
 
 // combine all shared style props.
 export type StyleInputProps = DimensionProps &
@@ -47,6 +50,7 @@ export const resolveStyleInput = (
       props.maxWidth,
       props.maxHeight,
     ),
+    ...createOpacityConfigs(props.opacity),
     ...createVisibilityConfigs(props.visibility),
   ];
   return resolveVariants(combinedConfigs, props.className, props.style);
