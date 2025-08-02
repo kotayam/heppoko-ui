@@ -2,6 +2,7 @@ import { DimensionProps } from "@/props/shared/dimension.props";
 import { VisibilityProps } from "@/props/shared/visibility.props";
 import { OpacityProps } from "@/props/shared/opacity.props";
 import React, { CSSProperties } from "react";
+import { BorderProps } from "@/props/shared/border.props";
 
 // accept inline styling and className to overriding and flexibility. Also make it clickable.
 export type CustomStyleProps = {
@@ -19,14 +20,6 @@ export type WrapperProps = CustomStyleProps & {
 const getDimensionStyle = (props: StyleInputProps): CSSProperties => {
   const { width, height, minWidth, minHeight, maxWidth, maxHeight } = props;
   return { width, height, minWidth, minHeight, maxWidth, maxHeight };
-};
-
-// styling for borders.
-export type BorderProps = {
-  borderStyle?: CSSProperties["borderStyle"];
-  borderWidth?: CSSProperties["borderWidth"];
-  borderColor?: HeppokoColors | CSSProperties["borderColor"];
-  borderRadius?: CSSProperties["borderRadius"];
 };
 
 // extract border props.

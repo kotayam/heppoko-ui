@@ -1,6 +1,5 @@
 import { CSSProperties, forwardRef } from "react";
 import {
-  BorderProps,
   ColorProps,
   combineStyle,
   MarginProps,
@@ -9,6 +8,7 @@ import {
   WrapperProps,
 } from "../../common";
 import { DimensionProps } from "@/props/shared/dimension.props";
+import { BorderProps } from "@/props/shared/border.props";
 
 type GridProps = {
   templateColumns?: CSSProperties["gridTemplateColumns"];

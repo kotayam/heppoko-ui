@@ -1,6 +1,5 @@
 import {
   WrapperProps,
-  BorderProps,
   PaddingProps,
   MarginProps,
   ShadowProps,
@@ -27,6 +26,7 @@ import {
 import { createConfig, VariantConfig } from "@/styles/utils/resolveVariants";
 import { DimensionProps } from "../shared/dimension.props";
 import { OpacityProps } from "../shared/opacity.props";
+import { BorderProps } from "../shared/border.props";
 
 export type FlexProps = {
   direction?: FlexDirection;
