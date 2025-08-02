@@ -6,4 +6,4 @@ export const opacityVariants = styleVariants({
   transparent: { opacity: 0 },
 });
 
-export type Opacity = keyof typeof opacityVariants | (string & {});
+export type Opacity = keyof typeof opacityVariants | number;
