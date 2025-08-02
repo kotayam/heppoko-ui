@@ -1,5 +1,5 @@
-import { Visibility, visibilityVariants } from "@/style/shared/visibility.css";
-import { createConfig } from "@/style/util/resolveVariants";
+import { Visibility, visibilityVariants } from "@/styles/shared/visibility.css";
+import { createConfig } from "@/styles/utils/resolveVariants";
 
 export type VisibilityProps = {
   visibility?: Visibility;

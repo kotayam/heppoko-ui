@@ -8,7 +8,7 @@ import {
   ColorProps,
   OpacityProps,
 } from "@/components/common";
-import { resolveVariants, VariantConfig } from "@/style/util/resolveVariants";
+import { resolveVariants, VariantConfig } from "@/styles/utils/resolveVariants";
 import {
   createVisibilityConfigs,
   VisibilityProps,

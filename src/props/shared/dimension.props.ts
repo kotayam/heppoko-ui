@@ -3,8 +3,8 @@ import {
   heightVariants,
   Width,
   widthVariants,
-} from "@/style/shared/dimension.css";
-import { createConfig } from "@/style/util/resolveVariants";
+} from "@/styles/shared/dimension.css";
+import { createConfig } from "@/styles/utils/resolveVariants";
 
 export type DimensionProps = {
   width?: Width;

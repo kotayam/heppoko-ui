@@ -24,8 +24,8 @@ import {
   RowGap,
   rowGapVariants,
   Wrap,
-} from "@/style/component/flex.css";
-import { createConfig, VariantConfig } from "@/style/util/resolveVariants";
+} from "@/styles/components/flex.css";
+import { createConfig, VariantConfig } from "@/styles/utils/resolveVariants";
 import { DimensionProps } from "../shared/dimension.props";
 
 export type FlexProps = {
