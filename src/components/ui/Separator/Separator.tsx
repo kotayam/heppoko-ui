@@ -5,8 +5,8 @@ import {
   combineStyle,
   CustomStyleProps,
   MarginProps,
-  OpacityProps,
 } from "../../common";
+import { OpacityProps } from "@/props/shared/opacity.props";
 
 type SeparatorProps = {
   orientation?: "horizontal" | "vertical";

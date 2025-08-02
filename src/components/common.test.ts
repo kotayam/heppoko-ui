@@ -6,13 +6,13 @@ import {
   combineStyle,
   getColor,
   MarginProps,
-  OpacityProps,
   PaddingProps,
   PositionProps,
   ShadowProps,
 } from "./common";
 import { VisibilityProps } from "@/props/shared/visibility.props";
 import { DimensionProps } from "@/props/shared/dimension.props";
+import { OpacityProps } from "@/props/shared/opacity.props";
 
 describe("Flex", () => {
   afterEach(() => {
