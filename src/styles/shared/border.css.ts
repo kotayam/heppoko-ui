@@ -17,11 +17,11 @@ export const borderColorVariants = styleVariants({
     // TODO: use color pallette
 });
 
-export const borderRadius = styleVariants({
+export const borderRadiusVariants = styleVariants({
     full: { borderRadius: "50%" },
 });
 
 export type BorderStyle = keyof typeof borderStyleVariants | (string & {});
 export type BorderWidth = keyof typeof borderWidthVariants | (string & {});
 export type BorderColor = keyof typeof borderColorVariants | (string & {});
-export type BorderRadius = keyof typeof borderRadius | (string & {});
+export type BorderRadius = keyof typeof borderRadiusVariants | (string & {});
