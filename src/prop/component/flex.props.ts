@@ -7,7 +7,7 @@ import {
   ColorProps,
   OpacityProps,
   PositionProps,
-} from "@/component/common";
+} from "@/components/common";
 import {
   AlignItems,
   alignVariants,

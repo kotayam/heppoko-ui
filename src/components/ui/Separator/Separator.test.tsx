@@ -1,6 +1,6 @@
 import { cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { getColor } from "@/component/common";
+import { getColor } from "@/components/common";
 import { Separator } from "./Separator";
 
 describe("Separator", () => {

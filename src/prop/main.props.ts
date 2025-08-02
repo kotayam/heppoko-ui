@@ -7,7 +7,7 @@ import {
   ShadowProps,
   ColorProps,
   OpacityProps,
-} from "@/component/common";
+} from "@/components/common";
 import { resolveVariants, VariantConfig } from "@/style/util/resolveVariants";
 import {
   createVisibilityConfigs,

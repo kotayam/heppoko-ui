@@ -2,7 +2,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { IconButton } from "./IconButton";
 import { Icon } from "../Icon/Icon";
-import { getColor } from "@/component/common";
+import { getColor } from "@/components/common";
 import userEvent from "@testing-library/user-event";
 
 describe("IconButton", () => {
