@@ -10,8 +10,8 @@ import {
   ShadowProps,
 } from "../../common";
 import { Icon } from "../Icon/Icon";
-import { VisibilityProps } from "@/prop/shared/visibility.props";
-import { DimensionProps } from "@/prop/shared/dimension.props";
+import { VisibilityProps } from "@/props/shared/visibility.props";
+import { DimensionProps } from "@/props/shared/dimension.props";
 
 type IconButtonProps = {
   icon: React.ReactElement<typeof Icon>;

@@ -8,7 +8,7 @@ import {
   ShadowProps,
   WrapperProps,
 } from "../../common";
-import { DimensionProps } from "@/prop/shared/dimension.props";
+import { DimensionProps } from "@/props/shared/dimension.props";
 
 type GridProps = {
   templateColumns?: CSSProperties["gridTemplateColumns"];

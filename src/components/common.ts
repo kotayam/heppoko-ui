@@ -1,5 +1,5 @@
-import { DimensionProps } from "@/prop/shared/dimension.props";
-import { VisibilityProps } from "@/prop/shared/visibility.props";
+import { DimensionProps } from "@/props/shared/dimension.props";
+import { VisibilityProps } from "@/props/shared/visibility.props";
 import React, { CSSProperties } from "react";
 
 // accept inline styling and className to overriding and flexibility. Also make it clickable.

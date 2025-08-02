@@ -8,7 +8,7 @@ import {
   PositionProps,
   WrapperProps,
 } from "../../common";
-import { DimensionProps } from "@/prop/shared/dimension.props";
+import { DimensionProps } from "@/props/shared/dimension.props";
 
 type ContainerProps = PositionProps &
   WrapperProps &
