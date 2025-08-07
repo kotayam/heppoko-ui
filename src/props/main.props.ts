@@ -3,7 +3,6 @@ import {
   PositionProps,
   PaddingProps,
   MarginProps,
-  ShadowProps,
   ColorProps,
 } from "@/components/common";
 import { resolveVariants, VariantConfig } from "@/styles/utils/resolveVariants";
@@ -20,6 +19,7 @@ import {
   OpacityProps,
 } from "@/props/shared/opacity.props";
 import { BorderProps, createBorderConfigs } from "./shared/border.props";
+import { createShadowConfigs, ShadowProps } from "./shared/shadow.props";
 
 // combine all shared style props.
 export type StyleInputProps = DimensionProps &
@@ -56,6 +56,7 @@ export const resolveStyleInput = (
       props.borderColor,
       props.borderRadius,
     ),
+    ...createShadowConfigs(props.shadow),
     ...createOpacityConfigs(props.opacity),
     ...createVisibilityConfigs(props.visibility),
   ];

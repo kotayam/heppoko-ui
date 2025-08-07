@@ -1,8 +1,9 @@
 import React from "react";
 
-import { combineStyle, ShadowProps } from "../../common";
+import { combineStyle } from "../../common";
 import { DimensionProps } from "@/props/shared/dimension.props";
 import { BorderProps } from "@/props/shared/border.props";
+import { ShadowProps } from "@/props/shared/shadow.props";
 
 type ImageProps = {
   src: string;
