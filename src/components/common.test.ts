@@ -7,12 +7,12 @@ import {
   MarginProps,
   PaddingProps,
   PositionProps,
-  ShadowProps,
 } from "./common";
 import { VisibilityProps } from "@/props/shared/visibility.props";
 import { DimensionProps } from "@/props/shared/dimension.props";
 import { OpacityProps } from "@/props/shared/opacity.props";
 import { BorderProps } from "@/props/shared/border.props";
+import { ShadowProps } from "@/props/shared/shadow.props";
 
 describe("Flex", () => {
   afterEach(() => {
@@ -44,7 +44,7 @@ describe("Flex", () => {
   };
 
   const shadow: ShadowProps = {
-    shadow: true,
+    shadow: "md",
   };
 
   const opacity: OpacityProps = {

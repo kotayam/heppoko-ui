@@ -6,12 +6,12 @@ import {
   CustomStyleProps,
   MarginProps,
   PaddingProps,
-  ShadowProps,
 } from "../../common";
 import { Icon } from "../Icon/Icon";
 import { VisibilityProps } from "@/props/shared/visibility.props";
 import { DimensionProps } from "@/props/shared/dimension.props";
 import { BorderProps } from "@/props/shared/border.props";
+import { ShadowProps } from "@/props/shared/shadow.props";
 
 type IconButtonProps = {
   icon: React.ReactElement<typeof Icon>;
@@ -35,7 +35,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
   bg = "black",
   width = "5rem",
   height = "5rem",
-  shadow = true,
+  shadow = "md",
   ...rest
 }) => {
   const baseStyle: CSSProperties = {

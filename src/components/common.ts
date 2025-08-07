@@ -3,6 +3,7 @@ import { VisibilityProps } from "@/props/shared/visibility.props";
 import { OpacityProps } from "@/props/shared/opacity.props";
 import React, { CSSProperties } from "react";
 import { BorderProps } from "@/props/shared/border.props";
+import { ShadowProps } from "@/props/shared/shadow.props";
 
 // accept inline styling and className to overriding and flexibility. Also make it clickable.
 export type CustomStyleProps = {
@@ -122,23 +123,11 @@ const getMarginStyle = (props: StyleInputProps): CSSProperties => {
   return style;
 };
 
-// styling for shadows.
-export type ShadowProps = {
-  shadow?: boolean;
-};
-
-// define box shadow style.
-const shadowStyle: CSSProperties["boxShadow"] = `
-0rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.6),
-0rem 0.125rem 0.375rem rgba(0, 0, 0, 0.4),
-0rem 0.25rem 0.75rem rgba(0, 0, 0, 0.3)
-`;
-
 // convert ShadowProps to CSSProperties.
 const getShadowStyle = (props: StyleInputProps): CSSProperties => {
   const { shadow } = props;
   return {
-    boxShadow: shadow ? shadowStyle : undefined,
+    boxShadow: shadow ? "" : undefined,
   };
 };
 
