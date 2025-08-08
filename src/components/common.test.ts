@@ -4,7 +4,6 @@ import {
   ColorProps,
   combineStyle,
   getColor,
-  MarginProps,
   PaddingProps,
   PositionProps,
 } from "./common";
@@ -13,6 +12,7 @@ import { DimensionProps } from "@/props/shared/dimension.props";
 import { OpacityProps } from "@/props/shared/opacity.props";
 import { BorderProps } from "@/props/shared/border.props";
 import { ShadowProps } from "@/props/shared/shadow.props";
+import { MarginProps } from "@/props/shared/margin.props";
 
 describe("Flex", () => {
   afterEach(() => {

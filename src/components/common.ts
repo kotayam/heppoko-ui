@@ -4,6 +4,7 @@ import { OpacityProps } from "@/props/shared/opacity.props";
 import React, { CSSProperties } from "react";
 import { BorderProps } from "@/props/shared/border.props";
 import { ShadowProps } from "@/props/shared/shadow.props";
+import { MarginProps } from "@/props/shared/margin.props";
 
 // accept inline styling and className to overriding and flexibility. Also make it clickable.
 export type CustomStyleProps = {
@@ -89,17 +90,6 @@ const getPaddingStyle = (props: StyleInputProps): CSSProperties => {
     style.paddingRight = px;
   }
   return style;
-};
-
-// styling for margins.
-export type MarginProps = {
-  m?: CSSProperties["margin"];
-  mx?: string;
-  my?: string;
-  mt?: CSSProperties["marginTop"];
-  mb?: CSSProperties["marginBottom"];
-  ml?: CSSProperties["marginLeft"];
-  mr?: CSSProperties["marginRight"];
 };
 
 // convert MarginProps to CSSProperties with priority.

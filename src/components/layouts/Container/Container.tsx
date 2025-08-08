@@ -2,13 +2,13 @@ import React from "react";
 import {
   ColorProps,
   combineStyle,
-  MarginProps,
   PaddingProps,
   PositionProps,
   WrapperProps,
 } from "../../common";
 import { DimensionProps } from "@/props/shared/dimension.props";
 import { BorderProps } from "@/props/shared/border.props";
+import { MarginProps } from "@/props/shared/margin.props";
 
 type ContainerProps = PositionProps &
   WrapperProps &

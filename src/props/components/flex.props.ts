@@ -1,7 +1,6 @@
 import {
   WrapperProps,
   PaddingProps,
-  MarginProps,
   ColorProps,
   PositionProps,
 } from "@/components/common";
@@ -27,6 +26,7 @@ import { DimensionProps } from "../shared/dimension.props";
 import { OpacityProps } from "../shared/opacity.props";
 import { BorderProps } from "../shared/border.props";
 import { ShadowProps } from "../shared/shadow.props";
+import { MarginProps } from "../shared/margin.props";
 
 export type FlexProps = {
   direction?: FlexDirection;

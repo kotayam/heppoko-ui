@@ -1,12 +1,8 @@
 import React, { CSSProperties } from "react";
 
-import {
-  ColorProps,
-  combineStyle,
-  CustomStyleProps,
-  MarginProps,
-} from "../../common";
+import { ColorProps, combineStyle, CustomStyleProps } from "../../common";
 import { OpacityProps } from "@/props/shared/opacity.props";
+import { MarginProps } from "@/props/shared/margin.props";
 
 type SeparatorProps = {
   orientation?: "horizontal" | "vertical";

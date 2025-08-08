@@ -4,7 +4,6 @@ import {
   ColorProps,
   combineStyle,
   CustomStyleProps,
-  MarginProps,
   PaddingProps,
 } from "../../common";
 import { Icon } from "../Icon/Icon";
@@ -12,6 +11,7 @@ import { VisibilityProps } from "@/props/shared/visibility.props";
 import { DimensionProps } from "@/props/shared/dimension.props";
 import { BorderProps } from "@/props/shared/border.props";
 import { ShadowProps } from "@/props/shared/shadow.props";
+import { MarginProps } from "@/props/shared/margin.props";
 
 type IconButtonProps = {
   icon: React.ReactElement<typeof Icon>;
