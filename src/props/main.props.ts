@@ -1,10 +1,5 @@
 import { CSSProperties } from "react";
-import {
-  PositionProps,
-  PaddingProps,
-  MarginProps,
-  ColorProps,
-} from "@/components/common";
+import { PositionProps, PaddingProps, ColorProps } from "@/components/common";
 import { resolveVariants, VariantConfig } from "@/styles/utils/resolveVariants";
 import {
   createVisibilityConfigs,
@@ -20,6 +15,7 @@ import {
 } from "@/props/shared/opacity.props";
 import { BorderProps, createBorderConfigs } from "./shared/border.props";
 import { createShadowConfigs, ShadowProps } from "./shared/shadow.props";
+import { createMarginConfigs, MarginProps } from "./shared/margin.props";
 
 // combine all shared style props.
 export type StyleInputProps = DimensionProps &
@@ -55,6 +51,15 @@ export const resolveStyleInput = (
       props.borderWidth,
       props.borderColor,
       props.borderRadius,
+    ),
+    ...createMarginConfigs(
+      props.m,
+      props.mx,
+      props.my,
+      props.ml,
+      props.mr,
+      props.mt,
+      props.mb,
     ),
     ...createShadowConfigs(props.shadow),
     ...createOpacityConfigs(props.opacity),

@@ -52,4 +52,5 @@ export const createMarginConfigs = (
     yConfigs[0] = createConfig(marginTopVariants, my, "marginTop");
     yConfigs[1] = createConfig(marginBottomVariants, my, "marginBottom");
   }
+  return [...xConfigs, ...yConfigs];
 };
