@@ -1,12 +1,8 @@
 import { CSSProperties, forwardRef } from "react";
-import {
-  combineStyle,
-  MarginProps,
-  PaddingProps,
-  WrapperProps,
-} from "../../common";
+import { combineStyle, PaddingProps, WrapperProps } from "../../common";
 import styles from "./ScrollArea.module.css";
 import { DimensionProps } from "@/props/shared/dimension.props";
+import { MarginProps } from "@/props/shared/margin.props";
 
 type ScrollBarDirection = "horizontal" | "vertical" | "both";
 
