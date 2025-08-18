@@ -5,6 +5,7 @@ import React, { CSSProperties } from "react";
 import { BorderProps } from "@/props/shared/border.props";
 import { ShadowProps } from "@/props/shared/shadow.props";
 import { MarginProps } from "@/props/shared/margin.props";
+import { PaddingProps } from "@/props/shared/padding.props";
 
 // accept inline styling and className to overriding and flexibility. Also make it clickable.
 export type CustomStyleProps = {
@@ -58,17 +59,6 @@ const getPositionStyle = (props: StyleInputProps): CSSProperties => {
     right,
     zIndex: z,
   };
-};
-
-// styling for paddings.
-export type PaddingProps = {
-  p?: CSSProperties["padding"];
-  px?: string;
-  py?: string;
-  pt?: CSSProperties["paddingTop"];
-  pb?: CSSProperties["paddingBottom"];
-  pl?: CSSProperties["paddingLeft"];
-  pr?: CSSProperties["paddingRight"];
 };
 
 // convert PaddingProps to CSSProperties with priority.

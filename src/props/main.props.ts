@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { PositionProps, PaddingProps, ColorProps } from "@/components/common";
+import { PositionProps, ColorProps } from "@/components/common";
 import { resolveVariants, VariantConfig } from "@/styles/utils/resolveVariants";
 import {
   createVisibilityConfigs,
@@ -16,6 +16,7 @@ import {
 import { BorderProps, createBorderConfigs } from "./shared/border.props";
 import { createShadowConfigs, ShadowProps } from "./shared/shadow.props";
 import { createMarginConfigs, MarginProps } from "./shared/margin.props";
+import { createPaddingConfigs, PaddingProps } from "./shared/padding.props";
 
 // combine all shared style props.
 export type StyleInputProps = DimensionProps &
@@ -51,6 +52,15 @@ export const resolveStyleInput = (
       props.borderWidth,
       props.borderColor,
       props.borderRadius,
+    ),
+    ...createPaddingConfigs(
+      props.p,
+      props.px,
+      props.py,
+      props.pl,
+      props.pr,
+      props.pt,
+      props.pb,
     ),
     ...createMarginConfigs(
       props.m,

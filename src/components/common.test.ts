@@ -1,18 +1,13 @@
 import { cleanup } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import {
-  ColorProps,
-  combineStyle,
-  getColor,
-  PaddingProps,
-  PositionProps,
-} from "./common";
+import { ColorProps, combineStyle, getColor, PositionProps } from "./common";
 import { VisibilityProps } from "@/props/shared/visibility.props";
 import { DimensionProps } from "@/props/shared/dimension.props";
 import { OpacityProps } from "@/props/shared/opacity.props";
 import { BorderProps } from "@/props/shared/border.props";
 import { ShadowProps } from "@/props/shared/shadow.props";
 import { MarginProps } from "@/props/shared/margin.props";
+import { PaddingProps } from "@/props/shared/padding.props";
 
 describe("Flex", () => {
   afterEach(() => {
