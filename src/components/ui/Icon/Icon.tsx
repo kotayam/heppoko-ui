@@ -1,43 +1,39 @@
 import React, { CSSProperties } from "react";
 
-import {
-  ColorProps,
-  combineStyle,
-  CustomStyleProps,
-  PositionProps,
-} from "../../common";
+import { ColorProps, combineStyle, CustomStyleProps } from "../../common";
+import { PositionProps } from "@/props/shared/position.props";
 
 type IconProps = {
-  icon: React.ElementType;
-  size?: CSSProperties["fontSize"];
-  strokeWidth?: CSSProperties["strokeWidth"];
-  strokeLinejoin?: CSSProperties["strokeLinejoin"];
-  strokeLinecap?: CSSProperties["strokeLinecap"];
+    icon: React.ElementType;
+    size?: CSSProperties["fontSize"];
+    strokeWidth?: CSSProperties["strokeWidth"];
+    strokeLinejoin?: CSSProperties["strokeLinejoin"];
+    strokeLinecap?: CSSProperties["strokeLinecap"];
 } & CustomStyleProps &
-  ColorProps &
-  PositionProps;
+    ColorProps &
+    PositionProps;
 
 export const Icon: React.FC<IconProps> = ({
-  className,
-  onClick,
-  icon: Icon,
-  size = "3rem",
-  strokeWidth,
-  strokeLinejoin = "round",
-  strokeLinecap = "round",
-  color = "white",
-  ...rest
+    className,
+    onClick,
+    icon: Icon,
+    size = "3rem",
+    strokeWidth,
+    strokeLinejoin = "round",
+    strokeLinecap = "round",
+    color = "white",
+    ...rest
 }) => {
-  const baseStyle: CSSProperties = {
-    fontSize: size,
-    strokeWidth: strokeWidth,
-    strokeLinejoin: strokeLinejoin,
-    strokeLinecap: strokeLinecap,
-  };
-  const combinedStyle = {
-    ...baseStyle,
-    ...combineStyle({ color, ...rest }),
-  };
+    const baseStyle: CSSProperties = {
+        fontSize: size,
+        strokeWidth: strokeWidth,
+        strokeLinejoin: strokeLinejoin,
+        strokeLinecap: strokeLinecap,
+    };
+    const combinedStyle = {
+        ...baseStyle,
+        ...combineStyle({ color, ...rest }),
+    };
 
-  return <Icon style={combinedStyle} className={className} onClick={onClick} />;
+    return <Icon style={combinedStyle} className={className} onClick={onClick} />;
 };
