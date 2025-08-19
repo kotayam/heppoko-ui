@@ -41,7 +41,7 @@ const getBorderStyle = (props: StyleInputProps): CSSProperties => {
 const getPositionStyle = (props: StyleInputProps): CSSProperties => {
     const { position, inset, top, bottom, left, right, z } = props;
     return {
-        position,
+        position: position as CSSProperties["position"],
         inset,
         top,
         bottom,
