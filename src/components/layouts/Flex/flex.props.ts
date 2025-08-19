@@ -15,7 +15,7 @@ import {
   RowGap,
   rowGapVariants,
   Wrap,
-} from "@/styles/components/layouts/flex.css";
+} from "./flex.css";
 import { createConfig, VariantConfig } from "@/styles/utils/resolveVariants";
 import { DimensionProps } from "@/props/shared/dimension.props";
 import { PositionProps } from "@/props/shared/position.props";
