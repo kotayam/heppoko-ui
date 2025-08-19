@@ -9,7 +9,7 @@ import {
   gapVariants,
   justifyVariants,
   rowGapVariants,
-} from "@/styles/components/flex.css";
+} from "@/styles/components/layouts/flex.css";
 
 describe("Flex", () => {
   afterEach(() => {

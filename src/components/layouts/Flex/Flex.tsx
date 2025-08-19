@@ -1,4 +1,7 @@
-import { createFlexConfigs, FlexProps } from "@/props/components/flex.props";
+import {
+  createFlexConfigs,
+  FlexProps,
+} from "@/props/components/layouts/flex.props";
 import { resolveStyleInput } from "@/props/main.props";
 import { forwardRef } from "react";
 
