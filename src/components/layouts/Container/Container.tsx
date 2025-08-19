@@ -7,23 +7,23 @@ import { PaddingProps } from "@/props/shared/padding.props";
 import { PositionProps } from "@/props/shared/position.props";
 
 type ContainerProps = PositionProps &
-    WrapperProps &
-    DimensionProps &
-    BorderProps &
-    PaddingProps &
-    MarginProps &
-    ColorProps;
+  WrapperProps &
+  DimensionProps &
+  BorderProps &
+  PaddingProps &
+  MarginProps &
+  ColorProps;
 
 export const Container: React.FC<ContainerProps> = ({
-    className,
-    onClick,
-    children,
-    ...rest
+  className,
+  onClick,
+  children,
+  ...rest
 }) => {
-    const combinedStyle = combineStyle(rest);
-    return (
-        <div style={combinedStyle} className={className} onClick={onClick}>
-            {children}
-        </div>
-    );
+  const combinedStyle = combineStyle(rest);
+  return (
+    <div style={combinedStyle} className={className} onClick={onClick}>
+      {children}
+    </div>
+  );
 };

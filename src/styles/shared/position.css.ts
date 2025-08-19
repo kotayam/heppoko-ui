@@ -2,50 +2,50 @@ import { styleVariants } from "@vanilla-extract/css";
 
 // TODO: create variable instead.
 const spacing = {
-    "0": "0",
-    "1": "4px",
-    "2": "8px",
-    "3": "12px",
-    "4": "16px",
-    "5": "24px",
-    "6": "32px",
-    "7": "40px",
-    "8": "48px",
-    "9": "64px",
+  "0": "0",
+  "1": "4px",
+  "2": "8px",
+  "3": "12px",
+  "4": "16px",
+  "5": "24px",
+  "6": "32px",
+  "7": "40px",
+  "8": "48px",
+  "9": "64px",
 } as const;
 
 export const positionVariants = styleVariants({
-    static: { position: "static" },
-    relative: { position: "relative" },
-    absolute: { position: "absolute" },
-    fixed: { position: "fixed" },
-    sticky: { position: "sticky" },
+  static: { position: "static" },
+  relative: { position: "relative" },
+  absolute: { position: "absolute" },
+  fixed: { position: "fixed" },
+  sticky: { position: "sticky" },
 });
 
 export const insetVariants = styleVariants(spacing, (spacing) => ({
-    inset: spacing,
+  inset: spacing,
 }));
 
 export const topVariants = styleVariants(spacing, (spacing) => ({
-    top: spacing,
+  top: spacing,
 }));
 
 export const bottomVariants = styleVariants(spacing, (spacing) => ({
-    bottom: spacing,
+  bottom: spacing,
 }));
 
 export const leftVariants = styleVariants(spacing, (spacing) => ({
-    left: spacing,
+  left: spacing,
 }));
 
 export const rightVariants = styleVariants(spacing, (spacing) => ({
-    right: spacing,
+  right: spacing,
 }));
 
 export const zIndexVariants = styleVariants({
-    auto: { zIndex: "auto" },
-    "0": { zIndex: 0 },
-    "1": { zIndex: 1 },
+  auto: { zIndex: "auto" },
+  "0": { zIndex: 0 },
+  "1": { zIndex: 1 },
 });
 
 export type Position = keyof typeof positionVariants | (string & {});
