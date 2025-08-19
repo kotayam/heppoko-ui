@@ -1,5 +1,6 @@
 import { CSSProperties, forwardRef } from "react";
-import { combineStyle, PositionProps, WrapperProps } from "../../common";
+import { combineStyle, WrapperProps } from "../../common";
+import { PositionProps } from "@/props/shared/position.props";
 
 type SectionLocation = "tl" | "tm" | "tr" | "bl" | "bm" | "br" | "lm" | "rm";
 

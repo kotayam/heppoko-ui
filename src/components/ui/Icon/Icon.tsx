@@ -1,11 +1,7 @@
 import React, { CSSProperties } from "react";
 
-import {
-  ColorProps,
-  combineStyle,
-  CustomStyleProps,
-  PositionProps,
-} from "../../common";
+import { ColorProps, combineStyle, CustomStyleProps } from "../../common";
+import { PositionProps } from "@/props/shared/position.props";
 
 type IconProps = {
   icon: React.ElementType;

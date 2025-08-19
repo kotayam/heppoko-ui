@@ -6,6 +6,7 @@ import { BorderProps } from "@/props/shared/border.props";
 import { ShadowProps } from "@/props/shared/shadow.props";
 import { MarginProps } from "@/props/shared/margin.props";
 import { PaddingProps } from "@/props/shared/padding.props";
+import { PositionProps } from "@/props/shared/position.props";
 
 // accept inline styling and className to overriding and flexibility. Also make it clickable.
 export type CustomStyleProps = {
@@ -36,22 +37,11 @@ const getBorderStyle = (props: StyleInputProps): CSSProperties => {
   };
 };
 
-// styling for positioning.
-export type PositionProps = {
-  position?: CSSProperties["position"];
-  inset?: CSSProperties["inset"];
-  top?: CSSProperties["top"];
-  bottom?: CSSProperties["bottom"];
-  left?: CSSProperties["left"];
-  right?: CSSProperties["right"];
-  z?: CSSProperties["zIndex"];
-};
-
 // extract position props.
 const getPositionStyle = (props: StyleInputProps): CSSProperties => {
   const { position, inset, top, bottom, left, right, z } = props;
   return {
-    position,
+    position: position as CSSProperties["position"],
     inset,
     top,
     bottom,

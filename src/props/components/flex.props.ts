@@ -1,4 +1,4 @@
-import { WrapperProps, ColorProps, PositionProps } from "@/components/common";
+import { WrapperProps, ColorProps } from "@/components/common";
 import {
   AlignItems,
   alignVariants,
@@ -23,6 +23,7 @@ import { BorderProps } from "../shared/border.props";
 import { ShadowProps } from "../shared/shadow.props";
 import { MarginProps } from "../shared/margin.props";
 import { PaddingProps } from "../shared/padding.props";
+import { PositionProps } from "../shared/position.props";
 
 export type FlexProps = {
   direction?: FlexDirection;

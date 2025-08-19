@@ -19,7 +19,7 @@ describe("Section", () => {
 
   it("no section location", () => {
     render(
-      <Section top={0} bottom={0} left={0} right={0}>
+      <Section top={"0"} bottom={"0"} left={"0"} right={"0"}>
         test
       </Section>,
     );
