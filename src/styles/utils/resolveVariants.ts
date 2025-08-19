@@ -2,53 +2,53 @@ import { CSSProperties } from "react";
 
 // VariantConfig represents the config for a variant.
 export type VariantConfig = {
-    variants: Record<string, string>;
-    value: string | number | undefined;
-    cssProp: string | CSSProperties | undefined;
+  variants: Record<string, string>;
+  value: string | number | undefined;
+  cssProp: string | CSSProperties | undefined;
 };
 
 // createConfig creates a new VariantConfig.
 export const createConfig = (
-    variants: Record<string, string>,
-    value: string | number | undefined,
-    cssProp: string | CSSProperties | undefined,
+  variants: Record<string, string>,
+  value: string | number | undefined,
+  cssProp: string | CSSProperties | undefined,
 ): VariantConfig => {
-    return { variants, value, cssProp };
+  return { variants, value, cssProp };
 };
 
 // resolveVariants returns a className and styles from VariantConfigs.
 export const resolveVariants = (
-    configs: VariantConfig[],
-    className?: string,
-    style?: CSSProperties,
+  configs: VariantConfig[],
+  className?: string,
+  style?: CSSProperties,
 ) => {
-    const classNames: string[] = [];
-    let inputStyle: Record<string, string | number> = {};
+  const classNames: string[] = [];
+  let inputStyle: Record<string, string | number> = {};
 
-    for (const { variants, value, cssProp } of configs) {
-        if (!value) continue;
+  for (const { variants, value, cssProp } of configs) {
+    if (!value) continue;
 
-        if (value in variants) {
-            classNames.push(variants[value]);
-        } else {
-            if (cssProp === undefined) {
-                continue;
-            } else if (typeof cssProp === "string") {
-                inputStyle[cssProp] = value;
-            } else {
-                inputStyle = { ...inputStyle, ...cssProp };
-            }
-        }
+    if (value in variants) {
+      classNames.push(variants[value]);
+    } else {
+      if (cssProp === undefined) {
+        continue;
+      } else if (typeof cssProp === "string") {
+        inputStyle[cssProp] = value;
+      } else {
+        inputStyle = { ...inputStyle, ...cssProp };
+      }
     }
-    if (className) classNames.push(className);
+  }
+  if (className) classNames.push(className);
 
-    const combinedStyle: CSSProperties = {
-        ...(inputStyle as CSSProperties),
-        ...style,
-    };
+  const combinedStyle: CSSProperties = {
+    ...(inputStyle as CSSProperties),
+    ...style,
+  };
 
-    return {
-        className: classNames.join(" "),
-        style: combinedStyle,
-    };
+  return {
+    className: classNames.join(" "),
+    style: combinedStyle,
+  };
 };
