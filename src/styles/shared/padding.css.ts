@@ -17,6 +17,16 @@ export const paddingVariants = styleVariants(spacing, (spacing) => ({
   padding: spacing,
 }));
 
+export const paddingXVariants = styleVariants(spacing, (spacing) => ({
+  paddingLeft: spacing,
+  paddingRight: spacing,
+}));
+
+export const paddingYVariants = styleVariants(spacing, (spacing) => ({
+  paddingTop: spacing,
+  paddingBottom: spacing,
+}));
+
 export const paddingTopVariants = styleVariants(spacing, (spacing) => ({
   paddingTop: spacing,
 }));
@@ -34,8 +44,8 @@ export const paddingRightVariants = styleVariants(spacing, (spacing) => ({
 }));
 
 export type Padding = keyof typeof paddingVariants | number | (string & {});
-export type PaddingX = keyof typeof spacing | number | (string & {});
-export type PaddingY = keyof typeof spacing | number | (string & {});
+export type PaddingX = keyof typeof paddingXVariants | number | (string & {});
+export type PaddingY = keyof typeof paddingYVariants | number | (string & {});
 export type PaddingTop =
   | keyof typeof paddingTopVariants
   | number

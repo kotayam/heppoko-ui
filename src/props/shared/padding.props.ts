@@ -10,7 +10,9 @@ import {
   paddingTopVariants,
   paddingVariants,
   PaddingX,
+  paddingXVariants,
   PaddingY,
+  paddingYVariants,
 } from "@/styles/shared/padding.css";
 import { createConfig } from "@/styles/utils/resolveVariants";
 
@@ -36,21 +38,29 @@ export const createPaddingConfigs = (
   if (p) {
     return [createConfig(paddingVariants, p, "padding")];
   }
-  const xConfigs = [
+  let xConfigs = [
     createConfig(paddingLeftVariants, pl, "paddingLeft"),
     createConfig(paddingRightVariants, pr, "paddingRight"),
   ];
   if (px) {
-    xConfigs[0] = createConfig(paddingLeftVariants, px, "paddingLeft");
-    xConfigs[1] = createConfig(paddingRightVariants, px, "paddingRight");
+    xConfigs = [
+      createConfig(paddingXVariants, px, {
+        paddingLeft: px,
+        paddingRight: px,
+      }),
+    ];
   }
-  const yConfigs = [
+  let yConfigs = [
     createConfig(paddingTopVariants, pt, "paddingTop"),
     createConfig(paddingBottomVariants, pb, "PaddingBottom"),
   ];
   if (py) {
-    yConfigs[0] = createConfig(paddingTopVariants, py, "paddingTop");
-    yConfigs[1] = createConfig(paddingBottomVariants, py, "paddingBottom");
+    yConfigs = [
+      createConfig(paddingYVariants, py, {
+        paddingTop: py,
+        paddingBottom: py,
+      }),
+    ];
   }
   return [...xConfigs, ...yConfigs];
 };

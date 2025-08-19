@@ -1,0 +1,32 @@
+import { ColorProps, CustomStyleProps } from "@/components/common";
+import { MarginProps } from "@/props/shared/margin.props";
+import { OpacityProps } from "@/props/shared/opacity.props";
+import {
+  horizontalVariants,
+  Size,
+  verticalVariants,
+} from "@/styles/components/ui/separator.css";
+import { createConfig, VariantConfig } from "@/styles/utils/resolveVariants";
+
+type Orientation = "horizontal" | "vertical";
+
+export type SeparatorProps = {
+  orientation?: Orientation;
+  size?: Size;
+} & CustomStyleProps &
+  MarginProps &
+  ColorProps &
+  OpacityProps;
+
+export const createSeparatorConfigs = (
+  orientation: Orientation | undefined,
+  size: Size | undefined,
+): VariantConfig[] => {
+  const o: Orientation = orientation ? orientation : "horizontal";
+  const s: Size = size ? size : "full";
+  if (o === "horizontal") {
+    return [createConfig(horizontalVariants, s, undefined)];
+  } else {
+    return [createConfig(verticalVariants, s, undefined)];
+  }
+};

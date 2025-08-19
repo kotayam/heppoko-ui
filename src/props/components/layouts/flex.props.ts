@@ -15,15 +15,15 @@ import {
   RowGap,
   rowGapVariants,
   Wrap,
-} from "@/styles/components/flex.css";
+} from "@/styles/components/layouts/flex.css";
 import { createConfig, VariantConfig } from "@/styles/utils/resolveVariants";
-import { DimensionProps } from "../shared/dimension.props";
-import { OpacityProps } from "../shared/opacity.props";
-import { BorderProps } from "../shared/border.props";
-import { ShadowProps } from "../shared/shadow.props";
-import { MarginProps } from "../shared/margin.props";
-import { PaddingProps } from "../shared/padding.props";
-import { PositionProps } from "../shared/position.props";
+import { DimensionProps } from "@/props/shared/dimension.props";
+import { PositionProps } from "@/props/shared/position.props";
+import { PaddingProps } from "@/props/shared/padding.props";
+import { MarginProps } from "@/props/shared/margin.props";
+import { BorderProps } from "@/props/shared/border.props";
+import { ShadowProps } from "@/props/shared/shadow.props";
+import { OpacityProps } from "@/props/shared/opacity.props";
 
 export type FlexProps = {
   direction?: FlexDirection;

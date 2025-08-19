@@ -17,6 +17,16 @@ export const marginVariants = styleVariants(spacing, (spacing) => ({
   margin: spacing,
 }));
 
+export const marginXVariants = styleVariants(spacing, (spacing) => ({
+  marginLeft: spacing,
+  marginRight: spacing,
+}));
+
+export const marginYVariants = styleVariants(spacing, (spacing) => ({
+  marginTop: spacing,
+  marginBottom: spacing,
+}));
+
 export const marginTopVariants = styleVariants(spacing, (spacing) => ({
   marginTop: spacing,
 }));
@@ -34,8 +44,8 @@ export const marginRightVariants = styleVariants(spacing, (spacing) => ({
 }));
 
 export type Margin = keyof typeof marginVariants | number | (string & {});
-export type MarginX = keyof typeof spacing | number | (string & {});
-export type MarginY = keyof typeof spacing | number | (string & {});
+export type MarginX = keyof typeof marginXVariants | number | (string & {});
+export type MarginY = keyof typeof marginYVariants | number | (string & {});
 export type MarginTop = keyof typeof marginTopVariants | number | (string & {});
 export type MarginBottom =
   | keyof typeof marginBottomVariants

@@ -10,7 +10,9 @@ import {
   marginTopVariants,
   marginVariants,
   MarginX,
+  marginXVariants,
   MarginY,
+  marginYVariants,
 } from "@/styles/shared/margin.css";
 import { createConfig } from "@/styles/utils/resolveVariants";
 
@@ -36,21 +38,29 @@ export const createMarginConfigs = (
   if (m) {
     return [createConfig(marginVariants, m, "margin")];
   }
-  const xConfigs = [
+  let xConfigs = [
     createConfig(marginLeftVariants, ml, "marginLeft"),
     createConfig(marginRightVariants, mr, "marginRight"),
   ];
   if (mx) {
-    xConfigs[0] = createConfig(marginLeftVariants, mx, "marginLeft");
-    xConfigs[1] = createConfig(marginRightVariants, mx, "marginRight");
+    xConfigs = [
+      createConfig(marginXVariants, mx, {
+        marginLeft: mx,
+        marginRight: mx,
+      }),
+    ];
   }
-  const yConfigs = [
+  let yConfigs = [
     createConfig(marginTopVariants, mt, "marginTop"),
     createConfig(marginBottomVariants, mb, "marginBottom"),
   ];
   if (my) {
-    yConfigs[0] = createConfig(marginTopVariants, my, "marginTop");
-    yConfigs[1] = createConfig(marginBottomVariants, my, "marginBottom");
+    yConfigs = [
+      createConfig(marginYVariants, my, {
+        marginTop: my,
+        marginBottom: my,
+      }),
+    ];
   }
   return [...xConfigs, ...yConfigs];
 };

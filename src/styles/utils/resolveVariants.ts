@@ -3,15 +3,15 @@ import { CSSProperties } from "react";
 // VariantConfig represents the config for a variant.
 export type VariantConfig = {
   variants: Record<string, string>;
-  value?: string | number;
-  cssProp: string;
+  value: string | number | undefined;
+  cssProp: string | CSSProperties | undefined;
 };
 
 // createConfig creates a new VariantConfig.
 export const createConfig = (
   variants: Record<string, string>,
   value: string | number | undefined,
-  cssProp: string,
+  cssProp: string | CSSProperties | undefined,
 ): VariantConfig => {
   return { variants, value, cssProp };
 };
@@ -23,7 +23,7 @@ export const resolveVariants = (
   style?: CSSProperties,
 ) => {
   const classNames: string[] = [];
-  const inputStyle: Record<string, string | number> = {};
+  let inputStyle: Record<string, string | number> = {};
 
   for (const { variants, value, cssProp } of configs) {
     if (!value) continue;
@@ -31,7 +31,13 @@ export const resolveVariants = (
     if (value in variants) {
       classNames.push(variants[value]);
     } else {
-      inputStyle[cssProp] = value;
+      if (cssProp === undefined) {
+        continue;
+      } else if (typeof cssProp === "string") {
+        inputStyle[cssProp] = value;
+      } else {
+        inputStyle = { ...inputStyle, ...cssProp };
+      }
     }
   }
   if (className) classNames.push(className);
