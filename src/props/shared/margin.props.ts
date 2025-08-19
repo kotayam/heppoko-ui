@@ -14,7 +14,7 @@ import {
   MarginY,
   marginYVariants,
 } from "@/styles/shared/margin.css";
-import { createConfig } from "@/styles/utils/resolveVariants";
+import { createConfig } from "@/helpers/resolveVariants";
 
 export type MarginProps = {
   m?: Margin;

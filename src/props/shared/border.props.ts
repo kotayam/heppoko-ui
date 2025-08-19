@@ -8,7 +8,7 @@ import {
   BorderWidth,
   borderWidthVariants,
 } from "@/styles/shared/border.css";
-import { createConfig } from "@/styles/utils/resolveVariants";
+import { createConfig } from "@/helpers/resolveVariants";
 
 export type BorderProps = {
   borderStyle?: BorderStyle;

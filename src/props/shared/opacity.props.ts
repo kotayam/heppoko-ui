@@ -1,5 +1,5 @@
 import { Opacity, opacityVariants } from "@/styles/shared/opacity.css";
-import { createConfig } from "@/styles/utils/resolveVariants";
+import { createConfig } from "@/helpers/resolveVariants";
 
 export type OpacityProps = {
   opacity?: Opacity;

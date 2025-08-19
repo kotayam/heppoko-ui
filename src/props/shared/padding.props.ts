@@ -14,7 +14,7 @@ import {
   PaddingY,
   paddingYVariants,
 } from "@/styles/shared/padding.css";
-import { createConfig } from "@/styles/utils/resolveVariants";
+import { createConfig } from "@/helpers/resolveVariants";
 
 export type PaddingProps = {
   p?: Padding;

@@ -1,8 +1,5 @@
-import {
-  createSeparatorConfigs,
-  SeparatorProps,
-} from "@/props/components/ui/separator.props";
-import { resolveStyleInput } from "@/props/main.props";
+import { createSeparatorConfigs, SeparatorProps } from "./separator.props";
+import { resolveStyleInput } from "@/helpers/resolveStyleInput";
 
 export const Separator: React.FC<SeparatorProps> = ({
   onClick,

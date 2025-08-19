@@ -1,23 +1,29 @@
 import { CSSProperties } from "react";
 import { ColorProps } from "@/components/common";
-import { resolveVariants, VariantConfig } from "@/styles/utils/resolveVariants";
+import { resolveVariants, VariantConfig } from "./resolveVariants";
 import {
   createVisibilityConfigs,
   VisibilityProps,
-} from "./shared/visibility.props";
+} from "@/props/shared/visibility.props";
 import {
   createDimensionConfigs,
   DimensionProps,
-} from "./shared/dimension.props";
+} from "@/props/shared/dimension.props";
 import {
   createOpacityConfigs,
   OpacityProps,
 } from "@/props/shared/opacity.props";
-import { BorderProps, createBorderConfigs } from "./shared/border.props";
-import { createShadowConfigs, ShadowProps } from "./shared/shadow.props";
-import { createMarginConfigs, MarginProps } from "./shared/margin.props";
-import { createPaddingConfigs, PaddingProps } from "./shared/padding.props";
-import { createPositionConfigs, PositionProps } from "./shared/position.props";
+import { BorderProps, createBorderConfigs } from "@/props/shared/border.props";
+import { createShadowConfigs, ShadowProps } from "@/props/shared/shadow.props";
+import { createMarginConfigs, MarginProps } from "@/props/shared/margin.props";
+import {
+  createPaddingConfigs,
+  PaddingProps,
+} from "@/props/shared/padding.props";
+import {
+  createPositionConfigs,
+  PositionProps,
+} from "@/props/shared/position.props";
 
 // combine all shared style props.
 export type StyleInputProps = DimensionProps &

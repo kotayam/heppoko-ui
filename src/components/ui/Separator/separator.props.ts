@@ -1,12 +1,8 @@
 import { ColorProps, CustomStyleProps } from "@/components/common";
 import { MarginProps } from "@/props/shared/margin.props";
 import { OpacityProps } from "@/props/shared/opacity.props";
-import {
-  horizontalVariants,
-  Size,
-  verticalVariants,
-} from "@/styles/components/ui/separator.css";
-import { createConfig, VariantConfig } from "@/styles/utils/resolveVariants";
+import { horizontalVariants, Size, verticalVariants } from "./separator.css";
+import { createConfig, VariantConfig } from "@/helpers/resolveVariants";
 
 type Orientation = "horizontal" | "vertical";
 

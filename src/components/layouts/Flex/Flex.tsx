@@ -1,8 +1,5 @@
-import {
-  createFlexConfigs,
-  FlexProps,
-} from "@/props/components/layouts/flex.props";
-import { resolveStyleInput } from "@/props/main.props";
+import { createFlexConfigs, FlexProps } from "./flex.props";
+import { resolveStyleInput } from "@/helpers/resolveStyleInput";
 import { forwardRef } from "react";
 
 export const Flex = forwardRef<HTMLDivElement, FlexProps>(
