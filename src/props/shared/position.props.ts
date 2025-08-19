@@ -14,7 +14,7 @@ import {
   ZIndex,
   zIndexVariants,
 } from "@/styles/shared/position.css";
-import { createConfig } from "@/styles/utils/resolveVariants";
+import { createConfig } from "@/helpers/resolveVariants";
 
 export type PositionProps = {
   position?: Position;

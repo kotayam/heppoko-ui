@@ -4,7 +4,7 @@ import {
   Width,
   widthVariants,
 } from "@/styles/shared/dimension.css";
-import { createConfig } from "@/styles/utils/resolveVariants";
+import { createConfig } from "@/helpers/resolveVariants";
 
 export type DimensionProps = {
   width?: Width;

@@ -1,5 +1,5 @@
 import { Shadow, shadowVariants } from "@/styles/shared/shadow.css";
-import { createConfig } from "@/styles/utils/resolveVariants";
+import { createConfig } from "@/helpers/resolveVariants";
 
 export type ShadowProps = {
   shadow?: Shadow;
