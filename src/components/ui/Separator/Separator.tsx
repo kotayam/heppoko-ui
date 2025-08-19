@@ -9,7 +9,7 @@ export const Separator: React.FC<SeparatorProps> = ({
     orientation = "horizontal",
     size = "full",
     opacity = "translucent",
-    m = "0.5rem",
+    m = "1",
     ...rest
 }) => {
     const res = resolveStyleInput(
