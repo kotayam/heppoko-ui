@@ -1,18 +1,16 @@
 import React from "react";
+import { ImageProps } from "./image.props";
+import { resolveStyleInput } from "@/helpers/resolveStyleInput";
 
-import { combineStyle } from "../../common";
-import { DimensionProps } from "@/props/shared/dimension.props";
-import { BorderProps } from "@/props/shared/border.props";
-import { ShadowProps } from "@/props/shared/shadow.props";
-
-type ImageProps = {
-  src: string;
-  alt: string;
-} & BorderProps &
-  DimensionProps &
-  ShadowProps;
-
-export const Image: React.FC<ImageProps> = ({ src, alt, ...rest }) => {
-  const combinedStyle = combineStyle(rest);
-  return <img src={src} alt={alt} style={combinedStyle} />;
+export const Image: React.FC<ImageProps> = ({ onClick, src, alt, ...rest }) => {
+  const res = resolveStyleInput(rest, []);
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={res.className}
+      style={res.style}
+      onClick={onClick}
+    />
+  );
 };
