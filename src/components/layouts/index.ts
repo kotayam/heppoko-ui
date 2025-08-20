@@ -1,5 +1,5 @@
-export { Container } from "./Container/Container";
-export { Flex } from "./Flex/Flex";
-export { Grid } from "./Grid/Grid";
-export { ScrollArea } from "./ScrollArea/ScrollArea";
-export { Section } from "./Section/Section";
+export { Container } from "./container/container";
+export { Flex } from "./flex/flex";
+export { Grid } from "./grid/grid";
+export { ScrollArea } from "./scroll-area/scroll-area";
+export { Section } from "./section/section";

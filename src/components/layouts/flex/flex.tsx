@@ -1,5 +1,5 @@
 import { createFlexConfigs, FlexProps } from "./flex.props";
-import { resolveStyleInput } from "@/helpers/resolveStyleInput";
+import { resolveStyleInput } from "@/helpers/resolve-style-input";
 import { forwardRef } from "react";
 
 export const Flex = forwardRef<HTMLDivElement, FlexProps>(

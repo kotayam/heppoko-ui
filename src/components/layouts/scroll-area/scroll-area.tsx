@@ -1,6 +1,6 @@
 import { CSSProperties, forwardRef } from "react";
 import { combineStyle, WrapperProps } from "../../common";
-import styles from "./ScrollArea.module.css";
+import styles from "./scroll-area.module.css";
 import { DimensionProps } from "@/props/shared/dimension.props";
 import { MarginProps } from "@/props/shared/margin.props";
 import { PaddingProps } from "@/props/shared/padding.props";
