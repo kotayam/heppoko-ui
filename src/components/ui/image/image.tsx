@@ -1,6 +1,6 @@
 import React from "react";
 import { ImageProps } from "./image.props";
-import { resolveStyleInput } from "@/helpers/resolveStyleInput";
+import { resolveStyleInput } from "@/helpers/resolve-style-input";
 
 export const Image: React.FC<ImageProps> = ({ onClick, src, alt, ...rest }) => {
   const res = resolveStyleInput(rest, []);

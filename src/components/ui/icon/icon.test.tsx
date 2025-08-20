@@ -1,10 +1,8 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import React from "react";
 import { afterEach, describe, expect, it } from "vitest";
-
 import { getColor } from "@/components/common";
-
-import { Icon } from "./Icon";
+import { Icon } from "./icon";
 
 const Test = (props: React.HTMLAttributes<HTMLDivElement>) => {
   return (
