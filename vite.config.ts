@@ -1,7 +1,11 @@
 import react from "@vitejs/plugin-react-swc";
 import path from "node:path";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { configDefaults, defineConfig } from "vitest/config";
+import {
+  configDefaults,
+  coverageConfigDefaults,
+  defineConfig,
+} from "vitest/config";
 import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
 export default defineConfig({
@@ -29,6 +33,7 @@ export default defineConfig({
     coverage: {
       reporter: ["text", "json"],
       include: ["src/"],
+      exclude: [...coverageConfigDefaults.exclude, "**/*.css.ts"],
       reportsDirectory: "coverage/report",
     },
     setupFiles: ["./vitest.setup.ts"],
