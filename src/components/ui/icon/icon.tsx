@@ -1,39 +1,17 @@
-import React, { CSSProperties } from "react";
-
-import { ColorProps, combineStyle, CustomStyleProps } from "../../common";
-import { PositionProps } from "@/props/shared/position.props";
-
-type IconProps = {
-  icon: React.ElementType;
-  size?: CSSProperties["fontSize"];
-  strokeWidth?: CSSProperties["strokeWidth"];
-  strokeLinejoin?: CSSProperties["strokeLinejoin"];
-  strokeLinecap?: CSSProperties["strokeLinecap"];
-} & CustomStyleProps &
-  ColorProps &
-  PositionProps;
+import { createIconConfigs, IconProps } from "./icon.props";
+import { resolveStyleInput } from "@/helpers/resolve-style-input";
 
 export const Icon: React.FC<IconProps> = ({
-  className,
   onClick,
   icon: Icon,
-  size = "3rem",
+  size = "md",
   strokeWidth,
-  strokeLinejoin = "round",
-  strokeLinecap = "round",
-  color = "white",
+  strokeLine = "round",
   ...rest
 }) => {
-  const baseStyle: CSSProperties = {
-    fontSize: size,
-    strokeWidth: strokeWidth,
-    strokeLinejoin: strokeLinejoin,
-    strokeLinecap: strokeLinecap,
-  };
-  const combinedStyle = {
-    ...baseStyle,
-    ...combineStyle({ color, ...rest }),
-  };
-
-  return <Icon style={combinedStyle} className={className} onClick={onClick} />;
+  const res = resolveStyleInput(
+    rest,
+    createIconConfigs(size, strokeWidth, strokeLine),
+  );
+  return <Icon className={res.className} style={res.style} onClick={onClick} />;
 };
