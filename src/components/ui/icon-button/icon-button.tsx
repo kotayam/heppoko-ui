@@ -1,7 +1,7 @@
 import React, { CSSProperties } from "react";
 
 import { ColorProps, combineStyle, CustomStyleProps } from "../../common";
-import { Icon } from "../Icon/Icon";
+import { Icon } from "../icon/icon";
 import { VisibilityProps } from "@/props/shared/visibility.props";
 import { DimensionProps } from "@/props/shared/dimension.props";
 import { BorderProps } from "@/props/shared/border.props";

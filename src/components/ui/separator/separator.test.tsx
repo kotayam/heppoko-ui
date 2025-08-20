@@ -1,6 +1,6 @@
 import { cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { Separator } from "./Separator";
+import { Separator } from "./separator";
 import { horizontalVariants, verticalVariants } from "./separator.css";
 import { opacityVariants } from "@/styles/shared/opacity.css";
 import { marginVariants } from "@/styles/shared/margin.css";

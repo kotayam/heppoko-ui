@@ -2,7 +2,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 import { expect, it } from "vitest";
 import { afterEach } from "vitest";
 import { describe } from "vitest";
-import { Grid } from "./Grid";
+import { Grid } from "./grid";
 
 describe("Grid", () => {
   afterEach(() => {

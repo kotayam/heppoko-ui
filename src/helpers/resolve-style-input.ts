@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 import { ColorProps } from "@/components/common";
-import { resolveVariants, VariantConfig } from "./resolveVariants";
+import { resolveVariants, VariantConfig } from "./resolve-variants";
 import {
   createVisibilityConfigs,
   VisibilityProps,

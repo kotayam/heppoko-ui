@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-import { Image } from "./Image";
+import { Image } from "./image";
 
 describe("Image", () => {
   afterEach(() => {

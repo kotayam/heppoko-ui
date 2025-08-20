@@ -10,7 +10,7 @@ import {
   commonTop,
   middle,
   Section,
-} from "./Section";
+} from "./section";
 
 describe("Section", () => {
   afterEach(() => {
