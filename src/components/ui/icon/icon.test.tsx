@@ -1,8 +1,12 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import React from "react";
 import { afterEach, describe, expect, it } from "vitest";
-import { getColor } from "@/components/common";
 import { Icon } from "./icon";
+import {
+  fontSizeVariants,
+  strokeLineVariants,
+  strokeWidthVariants,
+} from "./icon.css";
 
 const Test = (props: React.HTMLAttributes<HTMLDivElement>) => {
   return (
@@ -24,9 +28,14 @@ describe("Icon", () => {
   it("default style", () => {
     render(<Icon icon={Test} />);
     const icon = screen.getByText("test");
-    expect(icon).toHaveStyle({ fontSize: "3rem" });
-    expect(icon).toHaveStyle({ strokeLinejoin: "round" });
-    expect(icon).toHaveStyle({ strokeLinecap: "round" });
-    expect(icon).toHaveStyle({ color: getColor("white") });
+    expect(icon).toHaveClass(fontSizeVariants["md"]);
+    expect(icon).toHaveClass(strokeLineVariants["round"]);
+  });
+
+  it("custom style", () => {
+    render(<Icon icon={Test} size={"1rem"} strokeWidth="md" />);
+    const icon = screen.getByText("test");
+    expect(icon).toHaveStyle({ fontSize: "1rem" });
+    expect(icon).toHaveClass(strokeWidthVariants["md"]);
   });
 });
