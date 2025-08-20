@@ -92,17 +92,4 @@ export const resolveStyleInput = (
     ...createVisibilityConfigs(props.visibility),
   ];
   return resolveVariants(combinedConfigs, props.className, props.style);
-
-  // const combined = mergeStyles(
-  //     getDimensionStyle(props),
-  //     getBorderStyle(props),
-  //     getPositionStyle(props),
-  //     getPaddingStyle(props),
-  //     getMarginStyle(props),
-  //     getShadowStyle(props),
-  //     getColorStyle(props),
-  //     getOpacityStyle(props),
-  //     getVisibilityStyle(props),
-  //     style,
-  // );
 };
