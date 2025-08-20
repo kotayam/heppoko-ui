@@ -2,8 +2,13 @@ import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { IconButton } from "./icon-button";
 import { Icon } from "../icon/icon";
-import { getColor } from "@/components/common";
 import userEvent from "@testing-library/user-event";
+import { base } from "./icon-button.css";
+import {
+  borderStyleVariants,
+  borderWidthVariants,
+} from "@/styles/shared/border.css";
+import { shadowVariants } from "@/styles/shared/shadow.css";
 
 describe("IconButton", () => {
   const Test = () => {
@@ -18,25 +23,27 @@ describe("IconButton", () => {
   });
 
   it("default style", () => {
-    render(<IconButton icon={<Icon icon={Test} />} />);
+    render(
+      <IconButton>
+        <Icon icon={Test} />
+      </IconButton>,
+    );
     const button = screen.getByRole("button");
-    expect(button).toHaveStyle({ display: "flex" });
-    expect(button).toHaveStyle({ justifyContent: "center" });
-    expect(button).toHaveStyle({ alignItems: "center" });
-    expect(button).toHaveStyle({ cursor: "pointer" });
-
-    expect(button).toHaveStyle({ borderStyle: "solid" });
+    expect(button).toHaveClass(base);
+    expect(button).toHaveClass(borderStyleVariants["solid"]);
     expect(button).toHaveStyle({ borderRadius: "1rem" });
-    expect(button).toHaveStyle({ borderWidth: "2px" });
-    expect(button).toHaveStyle({ borderColor: getColor("green") });
-    expect(button).toHaveStyle({ backgroundColor: getColor("black") });
+    expect(button).toHaveClass(borderWidthVariants["md"]);
     expect(button).toHaveStyle({ width: "5rem" });
     expect(button).toHaveStyle({ height: "5rem" });
-    expect(button.style?.boxShadow).toBeDefined();
+    expect(button).toHaveClass(shadowVariants["md"]);
   });
 
   it("click triggers", async () => {
-    render(<IconButton icon={<Icon icon={Test} />} onClick={onClick} />);
+    render(
+      <IconButton onClick={onClick}>
+        <Icon icon={Test} />
+      </IconButton>,
+    );
     const button = screen.getByRole("button");
     const user = userEvent.setup();
     await user.click(button);
